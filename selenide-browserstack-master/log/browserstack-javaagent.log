@@ -1,0 +1,322 @@
+10:27:12.155 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+10:27:12.156 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+10:27:12.753 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:27:12.755 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+10:27:13.049 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:27:15.301 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:27:15.308 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: 3ffd97b8-9eb3-4fb6-aa0e-922b490388ab
+10:27:15.308 [main] INFO  c.b.config.BrowserStackConfig - INFO
+10:27:15.369 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+10:27:15.370 [main] DEBUG com.browserstack.v2.SdkCliUtils - getExistingCliPath: no binary found
+10:27:15.370 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: 
+10:27:16.046 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 0
+10:27:16.046 [main] DEBUG com.browserstack.v2.SdkCliUtils - Skipping binary download as BROWSERSTACK_SDK_BINARY_URL is set
+10:27:16.046 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: 
+10:27:16.049 [main] ERROR com.browserstack.v2.SdkCliUtils - Error in setting up cli path directory, Exception: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
+	at browserstack.shaded.okhttp3.HttpUrl$Builder.a(Unknown Source)
+	at browserstack.shaded.okhttp3.HttpUrl.get(Unknown Source)
+	at browserstack.shaded.okhttp3.Request$Builder.url(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.downloadLatestBinary(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.checkAndUpdateCli(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.setupCliPath(Unknown Source)
+	at com.browserstack.v2.SdkCLI.<clinit>(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+10:27:16.060 [main] DEBUG com.browserstack.v2.SdkCLI - startMain: main-process starting
+10:27:16.061 [main] INFO  com.browserstack.v2.SdkCLI - spawning command='null' 'sdk' 'tcp'
+10:27:19.970 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:27:21.748 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: fd7vys8f80xs0yny7roupnenxqpsceol8kxzyj3w
+10:27:21.749 [main] INFO  c.b.config.BrowserStackConfig - INFO
+10:27:21.749 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting Percy......
+10:27:22.185 [main] ERROR com.browserstack.PercyFactory - Initialization of percy failed - java.lang.Exception: Could not get percy token
+	at com.browserstack.PercyFactory.<init>(Unknown Source)
+	at com.browserstack.PercyFactory.a(Unknown Source)
+	at com.browserstack.PercyFactory.a(Unknown Source)
+	at com.browserstack.PercyFactory.createInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+10:27:22.185 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:27:34.156 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:28:15.489 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/fd7vys8f80xs0yny7roupnenxqpsceol8kxzyj3w to view build report, insights, and many more debugging information all at one place!
+
+10:28:15.489 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:28:15.490 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+10:28:18.767 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+10:28:18.767 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+10:28:20.318 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/df190cbc22c4fdc40e5ec14f6d5b649dc49f546b
+10:28:20.318 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:28:20.324 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: 3ffd97b8-9eb3-4fb6-aa0e-922b490388ab, testhub id: fd7vys8f80xs0yny7roupnenxqpsceol8kxzyj3w
+10:28:20.324 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:31:34.507 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+10:31:34.516 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+10:31:35.210 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:31:35.211 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+10:31:35.441 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:31:37.184 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:31:37.202 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: 616a3073-72ec-4f97-88e3-cdef762a07c5
+10:31:37.203 [main] INFO  c.b.config.BrowserStackConfig - INFO
+10:31:37.341 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+10:31:37.344 [main] DEBUG com.browserstack.v2.SdkCliUtils - getExistingCliPath: no binary found
+10:31:37.344 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: 
+10:31:38.393 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 0
+10:31:38.393 [main] DEBUG com.browserstack.v2.SdkCliUtils - Skipping binary download as BROWSERSTACK_SDK_BINARY_URL is set
+10:31:38.393 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: 
+10:31:38.396 [main] ERROR com.browserstack.v2.SdkCliUtils - Error in setting up cli path directory, Exception: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
+	at browserstack.shaded.okhttp3.HttpUrl$Builder.a(Unknown Source)
+	at browserstack.shaded.okhttp3.HttpUrl.get(Unknown Source)
+	at browserstack.shaded.okhttp3.Request$Builder.url(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.downloadLatestBinary(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.checkAndUpdateCli(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.setupCliPath(Unknown Source)
+	at com.browserstack.v2.SdkCLI.<clinit>(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+10:31:38.438 [main] DEBUG com.browserstack.v2.SdkCLI - startMain: main-process starting
+10:31:38.439 [main] INFO  com.browserstack.v2.SdkCLI - spawning command='null' 'sdk' 'tcp'
+10:31:42.465 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:31:43.637 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: sl5msdrklhifnixpdqspk2bro93dmogpjqtnvngs
+10:31:43.637 [main] INFO  c.b.config.BrowserStackConfig - INFO
+10:31:43.637 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting Percy......
+10:31:44.037 [main] ERROR com.browserstack.PercyFactory - Initialization of percy failed - java.lang.Exception: Could not get percy token
+	at com.browserstack.PercyFactory.<init>(Unknown Source)
+	at com.browserstack.PercyFactory.a(Unknown Source)
+	at com.browserstack.PercyFactory.a(Unknown Source)
+	at com.browserstack.PercyFactory.createInstance(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+10:31:44.038 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:31:54.887 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:32:33.329 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/sl5msdrklhifnixpdqspk2bro93dmogpjqtnvngs to view build report, insights, and many more debugging information all at one place!
+
+10:32:33.329 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:32:33.330 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+10:32:36.948 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+10:32:36.948 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+10:32:39.080 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/4c6bd2ebe0626c7ecc60b2f6e4133ed1f7cb32b0
+10:32:39.081 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:32:39.086 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: 616a3073-72ec-4f97-88e3-cdef762a07c5, testhub id: sl5msdrklhifnixpdqspk2bro93dmogpjqtnvngs
+10:32:39.086 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:00:24.283 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+11:00:24.284 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+11:00:24.459 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:00:24.459 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+11:00:24.521 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:00:25.237 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to selenide-testng
+11:00:25.240 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: d2e987ba-e74b-46b9-b1b7-54e3e8d2b640
+11:00:25.240 [main] INFO  c.b.config.BrowserStackConfig - INFO
+11:00:25.268 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+11:00:25.269 [main] DEBUG com.browserstack.v2.SdkCliUtils - getExistingCliPath: no binary found
+11:00:25.269 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: 
+11:00:25.948 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 0
+11:00:25.948 [main] DEBUG com.browserstack.v2.SdkCliUtils - Skipping binary download as BROWSERSTACK_SDK_BINARY_URL is set
+11:00:25.948 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: 
+11:00:25.949 [main] ERROR com.browserstack.v2.SdkCliUtils - Error in setting up cli path directory, Exception: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
+	at browserstack.shaded.okhttp3.HttpUrl$Builder.a(Unknown Source)
+	at browserstack.shaded.okhttp3.HttpUrl.get(Unknown Source)
+	at browserstack.shaded.okhttp3.Request$Builder.url(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.downloadLatestBinary(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.checkAndUpdateCli(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.setupCliPath(Unknown Source)
+	at com.browserstack.v2.SdkCLI.<clinit>(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+11:00:25.957 [main] INFO  com.browserstack.v2.SdkCLI - Disabling Cli for framework=selenide-testng
+11:00:29.651 [main] WARN  c.b.config.BrowserStackConfig - Test Observability could not be enabled because framework detected is selenide-testng. We currently support frameworks testng, cucumber-testng & serenity
+11:00:30.104 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:00:31.351 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: ssg8g2vip6fhkxtnpa7e8kpkscvokbtqhbwqyezg
+11:00:31.351 [main] INFO  c.b.config.BrowserStackConfig - INFO
+11:00:31.353 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:00:36.908 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:02:17.172 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+11:02:19.373 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+11:02:19.373 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+11:02:22.292 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/45aedda5406c05d9ece1bca60a30d7fe6d9850f5
+11:02:22.292 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:02:22.295 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: d2e987ba-e74b-46b9-b1b7-54e3e8d2b640, testhub id: ssg8g2vip6fhkxtnpa7e8kpkscvokbtqhbwqyezg
+11:02:22.295 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:27:14.545 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+09:27:14.546 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+09:27:14.712 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:27:14.712 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:27:14.773 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:27:15.385 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to selenide-testng
+09:27:15.388 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: 799ceed9-4c62-48fc-9840-57110044647d
+09:27:15.388 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:27:15.413 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+09:27:15.414 [main] DEBUG com.browserstack.v2.SdkCliUtils - getExistingCliPath: no binary found
+09:27:15.415 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: 
+09:27:16.200 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 0
+09:27:16.201 [main] DEBUG com.browserstack.v2.SdkCliUtils - Skipping binary download as BROWSERSTACK_SDK_BINARY_URL is set
+09:27:16.201 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: 
+09:27:16.201 [main] ERROR com.browserstack.v2.SdkCliUtils - Error in setting up cli path directory, Exception: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
+	at browserstack.shaded.okhttp3.HttpUrl$Builder.a(Unknown Source)
+	at browserstack.shaded.okhttp3.HttpUrl.get(Unknown Source)
+	at browserstack.shaded.okhttp3.Request$Builder.url(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.downloadLatestBinary(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.checkAndUpdateCli(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.setupCliPath(Unknown Source)
+	at com.browserstack.v2.SdkCLI.<clinit>(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+09:27:16.211 [main] INFO  com.browserstack.v2.SdkCLI - Disabling Cli for framework=selenide-testng
+09:27:19.867 [main] WARN  c.b.config.BrowserStackConfig - Test Observability could not be enabled because framework detected is selenide-testng. We currently support frameworks testng, cucumber-testng & serenity
+09:27:20.318 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:27:21.506 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: okhp8uyzbp47patd7hczxq6ufdcwi8r02edj4a5x
+09:27:21.506 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:27:21.508 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:27:26.688 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:28:06.285 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+09:28:09.380 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:28:09.380 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:28:11.694 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/cb80c24224901740167cdea6e3fd465f9d9ab016
+09:28:11.694 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:28:11.698 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: 799ceed9-4c62-48fc-9840-57110044647d, testhub id: okhp8uyzbp47patd7hczxq6ufdcwi8r02edj4a5x
+09:28:11.698 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:22:18.567 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+09:22:18.568 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+09:22:18.712 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:22:18.712 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:22:18.768 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:22:19.360 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to selenide-testng
+09:22:19.362 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: c298cce0-8e3b-49e0-a42a-385d23bf599f
+09:22:19.362 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:22:19.385 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+09:22:19.386 [main] DEBUG com.browserstack.v2.SdkCliUtils - getExistingCliPath: no binary found
+09:22:19.386 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: 
+09:22:21.028 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 0
+09:22:21.028 [main] DEBUG com.browserstack.v2.SdkCliUtils - Skipping binary download as BROWSERSTACK_SDK_BINARY_URL is set
+09:22:21.028 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: 
+09:22:21.029 [main] ERROR com.browserstack.v2.SdkCliUtils - Error in setting up cli path directory, Exception: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
+	at browserstack.shaded.okhttp3.HttpUrl$Builder.a(Unknown Source)
+	at browserstack.shaded.okhttp3.HttpUrl.get(Unknown Source)
+	at browserstack.shaded.okhttp3.Request$Builder.url(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.downloadLatestBinary(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.checkAndUpdateCli(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.setupCliPath(Unknown Source)
+	at com.browserstack.v2.SdkCLI.<clinit>(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+09:22:21.038 [main] INFO  com.browserstack.v2.SdkCLI - Disabling Cli for framework=selenide-testng
+09:22:24.608 [main] WARN  c.b.config.BrowserStackConfig - Test Observability could not be enabled because framework detected is selenide-testng. We currently support frameworks testng, cucumber-testng & serenity
+09:22:25.050 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:22:26.231 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: wx3dmhdmyllk20etpqegtg07kaallpb5wsat6ujy
+09:22:26.231 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:22:26.233 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:22:31.998 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:23:48.377 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+09:23:50.633 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:23:50.633 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:23:52.922 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/64e28175088b8d38aa9377663d4fb2a5e282c9ea
+09:23:52.922 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:23:52.927 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: c298cce0-8e3b-49e0-a42a-385d23bf599f, testhub id: wx3dmhdmyllk20etpqegtg07kaallpb5wsat6ujy
+09:23:52.929 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:24:06.026 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+09:24:06.027 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+09:24:06.168 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:24:06.169 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:24:06.221 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:24:06.812 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to selenide-testng
+09:24:06.814 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: eac56f9e-bc02-4d93-8759-e865de5fe235
+09:24:06.814 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:24:06.835 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+09:24:06.836 [main] DEBUG com.browserstack.v2.SdkCliUtils - getExistingCliPath: no binary found
+09:24:06.836 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: 
+09:24:07.393 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 0
+09:24:07.393 [main] DEBUG com.browserstack.v2.SdkCliUtils - Skipping binary download as BROWSERSTACK_SDK_BINARY_URL is set
+09:24:07.393 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: 
+09:24:07.393 [main] ERROR com.browserstack.v2.SdkCliUtils - Error in setting up cli path directory, Exception: java.lang.IllegalArgumentException: Expected URL scheme 'http' or 'https' but no colon was found
+	at browserstack.shaded.okhttp3.HttpUrl$Builder.a(Unknown Source)
+	at browserstack.shaded.okhttp3.HttpUrl.get(Unknown Source)
+	at browserstack.shaded.okhttp3.Request$Builder.url(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.downloadLatestBinary(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.checkAndUpdateCli(Unknown Source)
+	at com.browserstack.v2.SdkCliUtils.setupCliPath(Unknown Source)
+	at com.browserstack.v2.SdkCLI.<clinit>(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.b(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.startBrowserStackAgent(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent.premain(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+09:24:07.399 [main] INFO  com.browserstack.v2.SdkCLI - Disabling Cli for framework=selenide-testng
+09:24:10.946 [main] WARN  c.b.config.BrowserStackConfig - Test Observability could not be enabled because framework detected is selenide-testng. We currently support frameworks testng, cucumber-testng & serenity
+09:24:11.387 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:24:12.503 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: fwbeter4pztrrpl6uejavfzrebtyf1zomepejykt
+09:24:12.504 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:24:12.507 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:24:17.571 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:25:08.228 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+09:25:10.415 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:25:10.416 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+09:25:12.676 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/f44d845afedff4bd9d8353ea5844f91c68b794de
+09:25:12.677 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:25:12.680 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: eac56f9e-bc02-4d93-8759-e865de5fe235, testhub id: fwbeter4pztrrpl6uejavfzrebtyf1zomepejykt
+09:25:12.680 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
