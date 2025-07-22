@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="All Local Tests" verbose="1">
+    <parameter name="browser" value="chrome"/>
+    
+    <test name="All Test Classes">
+        <classes>
+            <class name="com.browserstack.SignupTest"/>
+            <class name="com.browserstack.BStackSampleTest"/>
+            <class name="com.browserstack.BStackLocalTest"/>
+            <class name="com.browserstack.suite.SuiteTest01"/>
+            <class name="com.browserstack.suite.SuiteTest02"/>
+            <class name="com.browserstack.suite.SuiteTest03"/>
+            <class name="com.browserstack.suite.SuiteTest04"/>
+        </classes>
+    </test>
+</suite>

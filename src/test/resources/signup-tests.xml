@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Signup Tests Only" verbose="1">
+    <parameter name="browser" value="chrome"/>
+    
+    <test name="Signup Test Cases">
+        <classes>
+            <class name="com.browserstack.SignupTest"/>
+        </classes>
+    </test>
+</suite>

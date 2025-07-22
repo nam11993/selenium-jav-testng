@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Local Selenium Test Suite" verbose="1">
+    <parameter name="browser" value="chrome"/>
+    
+    <test name="Signup Tests">
+        <classes>
+            <class name="com.browserstack.SignupTest">
+                <methods>
+                    <include name="testValidEmailSignup"/>
+                    <include name="testValidPhoneNumberSignup"/>
+                    <!-- Add other test methods as needed -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="BrowserStack Demo Tests">
+        <classes>
+            <class name="com.browserstack.BStackSampleTest"/>
+            <class name="com.browserstack.BStackLocalTest"/>
+        </classes>
+    </test>
+    
+    <test name="Suite Tests">
+        <classes>
+            <class name="com.browserstack.suite.SuiteTest01"/>
+            <class name="com.browserstack.suite.SuiteTest02"/>
+            <class name="com.browserstack.suite.SuiteTest03"/>
+            <class name="com.browserstack.suite.SuiteTest04"/>
+        </classes>
+    </test>
+</suite>
