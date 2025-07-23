@@ -393,4 +393,360 @@ public class SignupFlow extends LocalBrowserTest {
             throw e;
         }
     }
+
+    @Test
+    public void testEmptyFirstNameField() throws InterruptedException {
+        driver.get("https://fcex-fe-718949727112.asia-southeast1.run.app/en");
+        Thread.sleep(3000);
+        
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            // Click Login button first
+            WebElement loginButton = driver.findElement(
+                By.xpath("//button[contains(text(), 'Login') or contains(text(), 'LOG IN') or contains(text(), 'Sign in')]")
+            );
+            System.out.println("Found login button with text: " + loginButton.getText());
+            loginButton.click();
+            
+            // Click Register account link
+            WebElement registerButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(text(), 'Register') or contains(text(), 'Sign up')]")
+            ));
+            System.out.println("Found register button with text: " + registerButton.getText());
+            registerButton.click();
+            
+            // Enter email to proceed to name page
+            WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[@type='email']")
+            ));
+            emailInput.clear();
+            emailInput.sendKeys("test.firstname@gmail.com");
+            System.out.println("Entered email: test.firstname@example.com");
+            
+            // Click Continue to proceed to name page
+            WebElement emailContinueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            emailContinueButton.click();
+            System.out.println("Clicked Continue to navigate to name page");
+            
+            // Wait for name page to load
+            Thread.sleep(2000);
+            
+            // Leave first name empty and enter last name
+            WebElement firstNameInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[contains(@placeholder, 'first name')]")
+            ));
+            firstNameInput.clear(); // Ensure it's empty
+            System.out.println("First name field left empty");
+
+            // Enter last name
+            WebElement lastNameInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[contains(@placeholder, 'last name')]")
+            ));
+            lastNameInput.clear();
+            lastNameInput.sendKeys("TestLastName");
+            System.out.println("Entered last name: TestLastName");
+
+            // Try to click Continue without first name
+            WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            continueButton.click();
+            System.out.println("Clicked Continue button with empty first name");
+            
+            Thread.sleep(2000);
+            
+            // Check if we're still on the name page (validation should prevent progression)
+            boolean stillOnNamePage = driver.getPageSource().toLowerCase().contains("first name") || 
+                                    driver.getPageSource().toLowerCase().contains("last name");
+            
+            // Check if Continue button is disabled
+            boolean continueButtonDisabled = false;
+            try {
+                WebElement continueBtn = driver.findElement(By.xpath("//button[text()='Continue']"));
+                String disabledAttr = continueBtn.getAttribute("disabled");
+                continueButtonDisabled = (disabledAttr != null && disabledAttr.equals("true")) || 
+                                       !continueBtn.isEnabled();
+            } catch (Exception e) {
+                System.out.println("Could not check continue button state: " + e.getMessage());
+            }
+            
+            if (stillOnNamePage || continueButtonDisabled) {
+                System.out.println("✅ First name validation working: Cannot proceed without first name");
+            } else {
+                System.out.println("❌ First name validation not working: Can proceed without first name");
+            }
+            
+            // Look for validation error messages
+            try {
+                WebElement errorElement = driver.findElement(
+                    By.xpath("//*[contains(text(), 'first name') and (contains(text(), 'required') or contains(text(), 'Required')) or contains(@class, 'error')]")
+                );
+                System.out.println("Found first name validation message: " + errorElement.getText());
+            } catch (Exception e) {
+                System.out.println("No specific validation message found for empty first name");
+            }
+            
+            // Assert that validation prevents progression
+            assertTrue(stillOnNamePage || continueButtonDisabled, 
+                      "Should not be able to proceed without entering first name");
+            
+        } catch (Exception e) {
+            System.out.println("Error during empty first name test: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Test
+    public void testEmptyLastNameField() throws InterruptedException {
+        driver.get("https://fcex-fe-718949727112.asia-southeast1.run.app/en");
+        Thread.sleep(3000);
+        
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            // Click Login button first
+            WebElement loginButton = driver.findElement(
+                By.xpath("//button[contains(text(), 'Login') or contains(text(), 'LOG IN') or contains(text(), 'Sign in')]")
+            );
+            System.out.println("Found login button with text: " + loginButton.getText());
+            loginButton.click();
+            
+            // Click Register account link
+            WebElement registerButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(text(), 'Register') or contains(text(), 'Sign up')]")
+            ));
+            System.out.println("Found register button with text: " + registerButton.getText());
+            registerButton.click();
+            
+            // Enter email to proceed to name page
+            WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[@type='email']")
+            ));
+            emailInput.clear();
+            emailInput.sendKeys("test.lastname@gmail.com");
+            System.out.println("Entered email: test.lastname@gmail.com");
+            
+            // Click Continue to proceed to name page
+            WebElement emailContinueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            emailContinueButton.click();
+            System.out.println("Clicked Continue to navigate to name page");
+            
+            // Wait for name page to load
+            Thread.sleep(2000);
+            
+            // Enter first name but leave last name empty
+            WebElement firstNameInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[contains(@placeholder, 'first name')]")
+            ));
+            firstNameInput.clear();
+            firstNameInput.sendKeys("TestFirstName");
+            System.out.println("Entered first name: TestFirstName");
+
+            // Leave last name empty
+            WebElement lastNameInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[contains(@placeholder, 'last name')]")
+            ));
+            lastNameInput.clear(); // Ensure it's empty
+            System.out.println("Last name field left empty");
+
+            // Try to click Continue without last name
+            WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            continueButton.click();
+            System.out.println("Clicked Continue button with empty last name");
+            
+            Thread.sleep(2000);
+            
+            // Check if we're still on the name page (validation should prevent progression)
+            boolean stillOnNamePage = driver.getPageSource().toLowerCase().contains("first name") || 
+                                    driver.getPageSource().toLowerCase().contains("last name");
+            
+            // Check if Continue button is disabled
+            boolean continueButtonDisabled = false;
+            try {
+                WebElement continueBtn = driver.findElement(By.xpath("//button[text()='Continue']"));
+                String disabledAttr = continueBtn.getAttribute("disabled");
+                continueButtonDisabled = (disabledAttr != null && disabledAttr.equals("true")) || 
+                                       !continueBtn.isEnabled();
+            } catch (Exception e) {
+                System.out.println("Could not check continue button state: " + e.getMessage());
+            }
+            
+            if (stillOnNamePage || continueButtonDisabled) {
+                System.out.println("✅ Last name validation working: Cannot proceed without last name");
+            } else {
+                System.out.println("❌ Last name validation not working: Can proceed without last name");
+            }
+            
+            // Look for validation error messages
+            try {
+                WebElement errorElement = driver.findElement(
+                    By.xpath("//*[contains(text(), 'last name') and (contains(text(), 'required') or contains(text(), 'Required')) or contains(@class, 'error')]")
+                );
+                System.out.println("Found last name validation message: " + errorElement.getText());
+            } catch (Exception e) {
+                System.out.println("No specific validation message found for empty last name");
+            }
+            
+            // Assert that validation prevents progression
+            assertTrue(stillOnNamePage || continueButtonDisabled, 
+                      "Should not be able to proceed without entering last name");
+            
+        } catch (Exception e) {
+            System.out.println("Error during empty last name test: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Test
+    public void testEmptyBothNamesField() throws InterruptedException {
+        driver.get("https://fcex-fe-718949727112.asia-southeast1.run.app/en");
+        Thread.sleep(3000);
+        
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            // Click Login button first
+            WebElement loginButton = driver.findElement(
+                By.xpath("//button[contains(text(), 'Login') or contains(text(), 'LOG IN') or contains(text(), 'Sign in')]")
+            );
+            System.out.println("Found login button with text: " + loginButton.getText());
+            loginButton.click();
+            
+            // Click Register account link
+            WebElement registerButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(text(), 'Register') or contains(text(), 'Sign up')]")
+            ));
+            System.out.println("Found register button with text: " + registerButton.getText());
+            registerButton.click();
+            
+            // Enter email to proceed to name page
+            WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[@type='email']")
+            ));
+            emailInput.clear();
+            emailInput.sendKeys("test.bothnames@example.com");
+            System.out.println("Entered email: test.bothnames@gmail.com");
+            
+            // Click Continue to proceed to name page
+            WebElement emailContinueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            emailContinueButton.click();
+            System.out.println("Clicked Continue to navigate to name page");
+            
+            // Wait for name page to load
+            Thread.sleep(2000);
+            
+            // Leave both first name and last name empty
+            WebElement firstNameInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[contains(@placeholder, 'first name')]")
+            ));
+            firstNameInput.clear(); // Ensure it's empty
+            System.out.println("First name field left empty");
+
+            WebElement lastNameInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[contains(@placeholder, 'last name')]")
+            ));
+            lastNameInput.clear(); // Ensure it's empty
+            System.out.println("Last name field left empty");
+
+            // Try to click Continue without both names
+            WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            continueButton.click();
+            System.out.println("Clicked Continue button with both names empty");
+            
+            Thread.sleep(2000);
+            
+            // Check if we're still on the name page (validation should prevent progression)
+            boolean stillOnNamePage = driver.getPageSource().toLowerCase().contains("first name") || 
+                                    driver.getPageSource().toLowerCase().contains("last name");
+            
+            // Check if Continue button is disabled
+            boolean continueButtonDisabled = false;
+            try {
+                WebElement continueBtn = driver.findElement(By.xpath("//button[text()='Continue']"));
+                String disabledAttr = continueBtn.getAttribute("disabled");
+                continueButtonDisabled = (disabledAttr != null && disabledAttr.equals("true")) || 
+                                       !continueBtn.isEnabled();
+            } catch (Exception e) {
+                System.out.println("Could not check continue button state: " + e.getMessage());
+            }
+            
+            if (stillOnNamePage || continueButtonDisabled) {
+                System.out.println("✅ Names validation working: Cannot proceed without both names");
+            } else {
+                System.out.println("❌ Names validation not working: Can proceed without both names");
+            }
+            
+            // Look for validation error messages
+            try {
+                WebElement errorElement = driver.findElement(
+                    By.xpath("//*[(contains(text(), 'name') and (contains(text(), 'required') or contains(text(), 'Required'))) or contains(@class, 'error')]")
+                );
+                System.out.println("Found names validation message: " + errorElement.getText());
+            } catch (Exception e) {
+                System.out.println("No specific validation message found for empty names");
+            }
+            
+            // Assert that validation prevents progression
+            assertTrue(stillOnNamePage || continueButtonDisabled, 
+                      "Should not be able to proceed without entering both names");
+            
+        } catch (Exception e) {
+            System.out.println("Error during empty both names test: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    // Helper method to navigate to the name entry page
+    private void navigateToNamePage(String email) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        
+        try {
+            // Click Login button
+            WebElement loginButton = driver.findElement(
+                By.xpath("//button[contains(text(), 'Login') or contains(text(), 'LOG IN') or contains(text(), 'Sign in')]")
+            );
+            loginButton.click();
+            
+            // Click Register button
+            WebElement registerButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[contains(text(), 'Register') or contains(text(), 'Sign up')]")
+            ));
+            registerButton.click();
+            
+            // Enter email
+            WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[@type='email']")
+            ));
+            emailInput.clear();
+            emailInput.sendKeys(email);
+            System.out.println("Entered email: " + email);
+            
+            // Click Continue to proceed to name page
+            WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue']")
+            ));
+            continueButton.click();
+            System.out.println("Clicked Continue to navigate to name page");
+            
+            // Wait for name page to load
+            Thread.sleep(2000);
+            
+        } catch (Exception e) {
+            System.out.println("Error navigating to name page: " + e.getMessage());
+            throw new RuntimeException("Failed to navigate to name page", e);
+        }
+    }
+
+
 }

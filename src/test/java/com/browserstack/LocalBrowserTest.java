@@ -34,12 +34,15 @@ public class LocalBrowserTest {
     private WebDriver createDriver(String browserName) {
         switch (browserName.toLowerCase()) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.chromedriver().clearDriverCache().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
                 chromeOptions.addArguments("--disable-extensions");
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--disable-web-security");
+                chromeOptions.addArguments("--disable-features=VizDisplayCompositor");
                 // chromeOptions.addArguments("--headless"); // Uncomment for headless mode
                 return new ChromeDriver(chromeOptions);
                 
