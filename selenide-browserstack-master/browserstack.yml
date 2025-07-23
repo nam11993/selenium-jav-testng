@@ -1,0 +1,24 @@
+userName: namnguyen_tQzXx6
+accessKey: Pf78Ei1xogVT1fmoQ66f
+framework: selenide-testng
+platforms:
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: latest
+  - os: OS X
+    osVersion: Monterey
+    browserName: Safari
+    browserVersion: 15.6
+  - deviceName: iPhone 13
+    osVersion: 15
+    browserName: Chromium
+    deviceOrientation: portrait
+parallelsPerPlatform: 3
+browserstackLocal: true
+buildName: bstack-demo
+buildIdentifier: ${BUILD_NUMBER}
+projectName: Test first browser stack
+debug: true
+networkLogs: true
+consoleLogs: info
