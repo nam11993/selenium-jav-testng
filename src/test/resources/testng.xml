@@ -2,6 +2,16 @@
 <suite name="Local Selenium Test Suite" verbose="1">
     <parameter name="browser" value="chrome"/>
     
+    <test name="Login Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testValidEmailLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
     <test name="Signup Tests">
         <classes>
             <class name="com.browserstack.SignupTest">

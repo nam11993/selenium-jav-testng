@@ -115,6 +115,31 @@ public class Password extends LocalBrowserTest {
 
 
 
+            // Enter password without Uppercase
+            passwordInput.clear();
+            String noUppercasePassword = "test@password"; // No uppercase letter
+            passwordInput.sendKeys(noUppercasePassword);
+            System.out.println("🔑 Entered password without uppercase: " + noUppercasePassword);
+
+            // Enter confirm password
+            confirmPasswordInput.clear();
+            confirmPasswordInput.sendKeys(noUppercasePassword);
+            System.out.println("🔑 Entered matching confirm password");
+
+
+
+            // Enter password without lowercase
+            passwordInput.clear();
+            String noLowercasePassword = "TEST@PASSWORD"; // No lowercase letter
+            passwordInput.sendKeys(noLowercasePassword);
+            System.out.println("🔑 Entered password without lowercase: " + noLowercasePassword);
+
+            // Enter confirm password
+            confirmPasswordInput.clear();
+            confirmPasswordInput.sendKeys(noLowercasePassword);
+            System.out.println("🔑 Entered matching confirm password");
+
+
 
 
 

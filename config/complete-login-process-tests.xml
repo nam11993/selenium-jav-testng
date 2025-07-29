@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Complete Login Process Test Suite" verbose="1">
+    
+    <!-- Test Group 1: Basic Login to 2FA Completion -->
+    <test name="Complete Login Flow Tests">
+        <classes>
+            <class name="com.browserstack.Complete2FALoginTest">
+                <methods>
+                    <include name="testCompleteLoginWithAuthenticatorSetup"/>
+                    <include name="testCompleteLoginBySkipping2FA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 2: 2FA Setup Validation and Completion -->
+    <test name="2FA Setup Validation Tests">
+        <classes>
+            <class name="com.browserstack.Complete2FALoginTest">
+                <methods>
+                    <include name="testCompleteLoginWithQRCodeValidation"/>
+                    <include name="testCompleteLoginWithMultiple2FAAttempts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 3: Enhanced Login Tests with 2FA Details -->
+    <test name="Enhanced Login with 2FA Details">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testComplete2FASetupWithValidCode"/>
+                    <include name="testComplete2FASetupWithInvalidCode"/>
+                    <include name="testComplete2FASetupWithEmptyCode"/>
+                    <include name="testQRCodeAccessibility"/>
+                    <include name="testManualCodeEntry"/>
+                    <include name="testBackButtonFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 4: Navigation and UI Testing -->
+    <test name="Navigation and UI Tests">
+        <classes>
+            <class name="com.browserstack.Complete2FALoginTest">
+                <methods>
+                    <include name="testCompleteLoginWithNavigationTesting"/>
+                </methods>
+            </class>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testPostLoginNavigation"/>
+                    <include name="testUserAccountInfo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 5: Alternative Login Methods -->
+    <test name="Alternative Login Methods">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testGoogleLogin"/>
+                </methods>
+            </class>
+            <class name="com.browserstack.PhoneLoginTest">
+                <methods>
+                    <include name="testValidPhoneNumberLogin"/>
+                    <include name="testPhoneNumberOTPFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

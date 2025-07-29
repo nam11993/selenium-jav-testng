@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TwoFactorAuthTestSuite">
+    <test name="FCEX 2FA Specific Tests">
+        <classes>
+            <class name="com.browserstack.FCEXTwoFactorAuthTest">
+                <methods>
+                    <include name="testNavigateToSecurityPage"/>
+                    <include name="testTwoFactorAuthSectionPresence"/>
+                    <include name="testEnableTwoFactorAuth"/>
+                    <include name="testTwoFactorAuthQRCodeSetup"/>
+                    <include name="testTwoFactorAuthVerificationFlow"/>
+                    <include name="testDisableTwoFactorAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Generic 2FA QR Code Tests">
+        <classes>
+            <class name="com.browserstack.TwoFactorAuthTest">
+                <methods>
+                    <include name="testTwoFactorAuthQRCodeSetup"/>
+                    <include name="testTwoFactorAuthVerification"/>
+                    <include name="testQRCodeAccessibility"/>
+                </methods>
+            </class>
+            <class name="com.browserstack.QRCodeValidationTest">
+                <methods>
+                    <include name="testQRCodeGeneration"/>
+                    <include name="testQRCodeIntegrationWithAuthenticatorApps"/>
+                    <include name="testQRCodeErrorHandling"/>
+                    <include name="testQRCodeUserExperience"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

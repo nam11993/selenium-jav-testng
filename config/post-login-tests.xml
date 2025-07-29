@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Post-Login Functionality Tests" verbose="1">
+    <test name="Complete Login and Post-Login Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testValidEmailLogin"/>
+                    <include name="testTwoFactorSetupFlow"/>
+                    <include name="testAuthenticatorAppSetup"/>
+                    <include name="testUniversalSecondFactorSetup"/>
+                    <include name="testSkip2FASetup"/>
+                    <include name="testPostLoginNavigation"/>
+                    <include name="testUserAccountInfo"/>
+                    <include name="testLoginLogout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

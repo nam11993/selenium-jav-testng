@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Enhanced Valid Email Login with 2FA Test" verbose="1">
+    <test name="Enhanced Login Test">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testValidEmailLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

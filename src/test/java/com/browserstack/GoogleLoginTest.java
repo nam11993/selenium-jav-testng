@@ -44,11 +44,13 @@ public class GoogleLoginTest extends LocalBrowserTest {
             Thread.sleep(2000);
 
 
-            
+            // input email and password 
             WebElement inputEmailGoogle = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[@type='email']")
             ));
-            inputEmailGoogle.sendKeys("hainam11993@gmail.com");            WebElement nextButtonGoogle = wait.until(ExpectedConditions.elementToBeClickable(
+            inputEmailGoogle.sendKeys("hainam11993@gmail.com");
+            
+            WebElement nextButtonGoogle = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//span[text()='Next']")
             ));
             nextButtonGoogle.click();
@@ -63,75 +65,12 @@ public class GoogleLoginTest extends LocalBrowserTest {
             Thread.sleep(2000);
             
             
-            // Step 5: Handle popup window or redirect
-            Set<String> allWindows = driver.getWindowHandles();
-            System.out.println("🪟 Total windows after Google login click: " + allWindows.size());
             
-            if (allWindows.size() > 1) {
-                // Handle popup window
-                System.out.println("🔄 Google login opened in popup window");
-                for (String windowHandle : allWindows) {
-                    if (!windowHandle.equals(originalWindow)) {
-                        driver.switchTo().window(windowHandle);
-                        System.out.println("🪟 Switched to Google popup window");
-                        System.out.println("📍 Google popup URL: " + driver.getCurrentUrl());
-                        break;
-                    }
-                }
-            } else {
-                // Handle redirect in same window
-                System.out.println("🔄 Google login redirected in same window");
-                System.out.println("📍 Redirected URL: " + driver.getCurrentUrl());
-            }
             
-            // Step 6: Verify we're on Google login page
-            String currentUrl = driver.getCurrentUrl();
-            boolean isGooglePage = currentUrl.contains("accounts.google.com") || 
-                                 currentUrl.contains("google.com") ||
-                                 driver.getPageSource().toLowerCase().contains("google");
-            
-            if (isGooglePage) {
-                System.out.println("✅ Successfully redirected to Google authentication page");
-                System.out.println("📍 Google auth URL: " + currentUrl);
-                
-                // Step 7: Enter Google credentials (for demo purposes, we'll just verify the page elements)
-                try {
-                    // Look for email input field
-                    WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                        By.xpath("//input[@type='email' or @id='identifierId']")
-                    ));
-                    System.out.println("✅ Found Google email input field");
-                    
-                    // For security reasons, we won't actually enter real credentials
-                    // In a real test, you would use test credentials here
-                    System.out.println("🔐 Email input field is ready for credentials");
-                    System.out.println("⚠️ Note: For security, actual credentials should be entered manually or from secure config");
-                    
-                    // Verify Next button is present
-                    WebElement nextButton = driver.findElement(
-                        By.xpath("//button[@id='identifierNext' or contains(text(), 'Next')]")
-                    );
-                    System.out.println("✅ Found Google 'Next' button");
-                    
-                } catch (Exception e) {
-                    System.out.println("⚠️ Could not find standard Google login elements: " + e.getMessage());
-                    System.out.println("🔍 Page might have different structure or be loading");
-                }
-                
-            } else {
-                System.out.println("❌ Did not reach Google authentication page");
-                System.out.println("📍 Current URL: " + currentUrl);
-                System.out.println("🔍 Page title: " + driver.getTitle());
-            }
-            
-            // Step 8: Return to original window if popup was used
-            if (allWindows.size() > 1) {
-                driver.close(); // Close Google popup
-                driver.switchTo().window(originalWindow);
-                System.out.println("🔙 Returned to original window");
-            }
             
             // Step 9: Verify test completion
+            String finalUrl = driver.getCurrentUrl();
+            boolean isGooglePage = finalUrl.contains("google.com") || finalUrl.contains("accounts.google");
             System.out.println("✅ Google Login Authentication Test completed");
             assertTrue(isGooglePage, "Should have reached Google authentication page");
             

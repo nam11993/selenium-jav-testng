@@ -320,3 +320,116 @@
 09:25:12.677 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
 09:25:12.680 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: eac56f9e-bc02-4d93-8759-e865de5fe235, testhub id: fwbeter4pztrrpl6uejavfzrebtyf1zomepejykt
 09:25:12.680 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+16:10:51.647 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+16:10:51.650 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+16:10:52.135 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=D\:\\Download\\selenide-browserstack-master\\selenide-browserstack-master, test=SignupFlow\#testEmptyFirstNameField, user.dir=D\:\\Download\\selenide-browserstack-master\\selenide-browserstack-master, localrepository=C\:\\Users\\namnh189.FSOFT.FPT.VN\\.m2\\repository}
+16:10:52.137 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+16:11:00.288 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to selenide-testng
+16:11:00.291 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: 20099049-6166-432f-826b-d643705b8a33
+16:11:00.291 [main] INFO  c.b.config.BrowserStackConfig - INFO
+16:11:00.317 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+16:11:00.322 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: C:\Users\namnh189.FSOFT.FPT.VN\.browserstack\cli\binary-win-x64.exe
+16:11:02.635 [main] DEBUG com.browserstack.v2.SdkCliUtils - Need to update binary, current binary version: 1.5.8
+16:11:02.635 [main] DEBUG com.browserstack.v2.SdkCliUtils - Downloading SDK binary from: https://sdk-assets.browserstack.com/binary-win-x64-1.6.0.zip
+16:11:06.098 [main] DEBUG com.browserstack.v2.SdkCliUtils - Files successfully extracted to: C:\Users\namnh189.FSOFT.FPT.VN\.browserstack\cli
+16:11:10.084 [main] DEBUG com.browserstack.v2.SdkCliUtils - Resolved binary path: C:\Users\namnh189.FSOFT.FPT.VN\.browserstack\cli\binary-win-x64.exe
+16:11:10.089 [main] INFO  com.browserstack.v2.SdkCLI - Disabling Cli for framework=selenide-testng
+16:11:13.731 [main] WARN  c.b.config.BrowserStackConfig - Test Observability could not be enabled because framework detected is selenide-testng. We currently support frameworks testng, cucumber-testng & serenity
+16:11:14.120 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+16:11:16.492 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: aazqlic9ljmwdjd5rtocn1tmup1kg0zyzmgq7tjs
+16:11:16.493 [main] INFO  c.b.config.BrowserStackConfig - INFO
+16:11:16.494 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+16:11:34.490 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+16:11:35.352 [Thread-0] ERROR c.browserstack.testOps.RequestUtils - [RequestUtils] Error in stop: Non 200 response
+com.browserstack.testOps.RequestException: Non 200 response
+	at com.browserstack.testOps.RequestException.non200(Unknown Source)
+	at com.browserstack.testOps.RequestUtils.requestToTestOps(Unknown Source)
+	at com.browserstack.testOps.RequestUtils.requestToTestOpsString(Unknown Source)
+	at com.browserstack.testOps.RequestUtils.stop(Unknown Source)
+	at com.browserstack.testOps.Listener.a(Unknown Source)
+	at com.browserstack.testOps.Listener.a(Unknown Source)
+	at com.browserstack.testOps.Listener.onComplete(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.browserstack.utils.ConditionalInvocationHandler.invoke(Unknown Source)
+	at com.sun.proxy.$Proxy7.onComplete(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.run(Unknown Source)
+16:11:37.269 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+16:11:44.120 [Thread-0] DEBUG c.browserstack.utils.UtilityMethods - Browserstack yml path passed - D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+16:11:46.449 [Thread-0] DEBUG c.browserstack.utils.UtilityMethods - unable to delete debug log: java.nio.file.FileSystemException: D:\Download\selenide-browserstack-master\selenide-browserstack-master\log\browserstack-javaagent.debug.log: The process cannot access the file because it is being used by another process.
+
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110)
+	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1181)
+	at com.browserstack.utils.UtilityMethods.a(Unknown Source)
+	at com.browserstack.utils.UtilityMethods.a(Unknown Source)
+	at com.browserstack.utils.UtilityMethods.sendLogs(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.run(Unknown Source)
+
+16:11:46.449 [Thread-0] DEBUG c.browserstack.utils.UtilityMethods - Browserstack Gradle Config File does not exist.
+16:11:46.880 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: 20099049-6166-432f-826b-d643705b8a33, testhub id: aazqlic9ljmwdjd5rtocn1tmup1kg0zyzmgq7tjs
+16:11:46.881 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+16:12:06.406 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.1.0
+16:12:06.408 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 
+16:12:07.172 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {basedir=D\:\\Download\\selenide-browserstack-master\\selenide-browserstack-master, test=SignupFlow\#testEmptyFirstNameField, user.dir=D\:\\Download\\selenide-browserstack-master\\selenide-browserstack-master, localrepository=C\:\\Users\\namnh189.FSOFT.FPT.VN\\.m2\\repository}
+16:12:07.190 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+16:12:12.435 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to selenide-testng
+16:12:12.438 [main] INFO  c.browserstack.BrowserStackJavaAgent - SDK run started with id: 4352adb1-d5d8-43c6-8704-abd2f2b4cd2b
+16:12:12.438 [main] INFO  c.b.config.BrowserStackConfig - INFO
+16:12:12.453 [main] DEBUG com.browserstack.v2.SdkCliUtils - File C:\Users\namnh189.FSOFT.FPT.VN\.browserstack already exist
+16:12:12.455 [main] DEBUG com.browserstack.v2.SdkCliUtils - Current CLI Path Found: C:\Users\namnh189.FSOFT.FPT.VN\.browserstack\cli\binary-win-x64.exe
+16:12:18.731 [main] DEBUG com.browserstack.v2.SdkCliUtils - Resolved binary path: C:\Users\namnh189.FSOFT.FPT.VN\.browserstack\cli\binary-win-x64.exe
+16:12:18.737 [main] INFO  com.browserstack.v2.SdkCLI - Disabling Cli for framework=selenide-testng
+16:12:22.586 [main] WARN  c.b.config.BrowserStackConfig - Test Observability could not be enabled because framework detected is selenide-testng. We currently support frameworks testng, cucumber-testng & serenity
+16:12:23.678 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+16:12:24.902 [main] INFO  com.browserstack.testOps.Listener - Testhub started with id: n7l4so2gp4ndx8cgcgnpwkip7chl3kg8twtzgm8t
+16:12:24.902 [main] INFO  c.b.config.BrowserStackConfig - INFO
+16:12:24.902 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+16:12:38.037 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+16:12:40.384 [Thread-0] ERROR c.browserstack.testOps.RequestUtils - [RequestUtils] Error in stop: Non 200 response
+com.browserstack.testOps.RequestException: Non 200 response
+	at com.browserstack.testOps.RequestException.non200(Unknown Source)
+	at com.browserstack.testOps.RequestUtils.requestToTestOps(Unknown Source)
+	at com.browserstack.testOps.RequestUtils.requestToTestOpsString(Unknown Source)
+	at com.browserstack.testOps.RequestUtils.stop(Unknown Source)
+	at com.browserstack.testOps.Listener.a(Unknown Source)
+	at com.browserstack.testOps.Listener.a(Unknown Source)
+	at com.browserstack.testOps.Listener.onComplete(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.browserstack.utils.ConditionalInvocationHandler.invoke(Unknown Source)
+	at com.sun.proxy.$Proxy7.onComplete(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.run(Unknown Source)
+16:12:43.137 [Thread-0] INFO  com.browserstack.v2.SdkCLI - stop: cli is not running.
+16:12:46.468 [Thread-0] DEBUG c.browserstack.utils.UtilityMethods - Browserstack yml path passed - D:\Download\selenide-browserstack-master\selenide-browserstack-master\browserstack.yml
+16:12:48.504 [Thread-0] DEBUG c.browserstack.utils.UtilityMethods - unable to delete debug log: java.nio.file.FileSystemException: D:\Download\selenide-browserstack-master\selenide-browserstack-master\log\browserstack-javaagent.debug.log: The process cannot access the file because it is being used by another process.
+
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110)
+	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1181)
+	at com.browserstack.utils.UtilityMethods.a(Unknown Source)
+	at com.browserstack.utils.UtilityMethods.a(Unknown Source)
+	at com.browserstack.utils.UtilityMethods.sendLogs(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.a(Unknown Source)
+	at com.browserstack.BrowserStackJavaAgent$FinalExecution.run(Unknown Source)
+
+16:12:48.506 [Thread-0] DEBUG c.browserstack.utils.UtilityMethods - Browserstack Gradle Config File does not exist.
+16:12:49.020 [Thread-0] INFO  c.browserstack.BrowserStackJavaAgent - SDK run ended for id: 4352adb1-d5d8-43c6-8704-abd2f2b4cd2b, testhub id: n7l4so2gp4ndx8cgcgnpwkip7chl3kg8twtzgm8t
+16:12:49.020 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO

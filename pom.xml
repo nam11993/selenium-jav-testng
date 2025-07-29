@@ -57,6 +57,13 @@
             <artifactId>selenide</artifactId>
             <version>6.19.1</version>
         </dependency>
+
+        <!-- Google Authenticator for TOTP -->
+        <dependency>
+            <groupId>com.warrenstrange</groupId>
+            <artifactId>googleauth</artifactId>
+            <version>1.5.0</version>
+        </dependency>
     </dependencies>
 
     <build>

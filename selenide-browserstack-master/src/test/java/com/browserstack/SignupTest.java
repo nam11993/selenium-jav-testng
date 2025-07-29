@@ -81,7 +81,7 @@ public class SignupTest extends BrowserStackTest {
                 By.xpath("//button[contains(text(), 'Login') or contains(text(), 'LOG IN') or contains(text(), 'Sign in')]")
             );
             System.out.println("Found login button with text: " + loginButton.getText());
-            loginButton.click();
+            loginButton.click();r
             
             // Click Register account link
             WebElement registerButton = wait.until(ExpectedConditions.elementToBeClickable(

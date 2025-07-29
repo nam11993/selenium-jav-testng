@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Complete Login and Post-Login Test Suite" verbose="1">
+    
+    <!-- Test Group 1: Basic Login Functionality -->
+    <test name="Basic Login Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testValidEmailLogin"/>
+                    <include name="testInvalidEmailLogin"/>
+                    <include name="testInvalidPasswordLogin"/>
+                    <include name="testEmptyFieldsLogin"/>
+                    <include name="testInvalidEmailFormatLogin"/>
+                    <include name="testLoginPageElements"/>
+                    <include name="testForgotPasswordFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 2: Post-Login 2FA Functionality -->
+    <test name="Two-Factor Authentication Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testTwoFactorSetupFlow"/>
+                    <include name="testAuthenticatorAppSetup"/>
+                    <include name="testUniversalSecondFactorSetup"/>
+                    <include name="testSkip2FASetup"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 3: Post-Login Navigation and Features -->
+    <test name="Post-Login Functionality Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testPostLoginNavigation"/>
+                    <include name="testUserAccountInfo"/>
+                    <include name="testLoginLogout"/>
+                </methods>
+            </class>
+            <class name="com.browserstack.PostLoginFunctionalityTest">
+                <methods>
+                    <include name="testCompleteLoginAndSecuritySetup"/>
+                    <include name="testTwoFactorAuthFlow"/>
+                    <include name="testSecurityPageAccess"/>
+                    <include name="testAccountSettingsAccess"/>
+                    <include name="testDashboardFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 4: Google OAuth and Alternative Login Methods -->
+    <test name="Alternative Login Methods">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testGoogleLogin"/>
+                </methods>
+            </class>
+            <class name="com.browserstack.PhoneLoginTest">
+                <methods>
+                    <include name="testValidPhoneNumberLogin"/>
+                    <include name="testPhoneNumberOTPFlow"/>
+                    <include name="testInvalidPhoneNumberLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

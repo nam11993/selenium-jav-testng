@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Complete 2FA Setup and Login Test Suite" verbose="1">
+    
+    <!-- Test Group 1: Basic Login to 2FA Setup -->
+    <test name="Login to 2FA Setup Flow">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testValidEmailLogin"/>
+                    <include name="testTwoFactorSetupFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 2: Complete 2FA Setup with Different Scenarios -->
+    <test name="2FA Setup Completion Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testComplete2FASetupWithValidCode"/>
+                    <include name="testComplete2FASetupWithInvalidCode"/>
+                    <include name="testComplete2FASetupWithEmptyCode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 3: 2FA Setup UI and Accessibility -->
+    <test name="2FA Setup Interface Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testAuthenticatorAppSetup"/>
+                    <include name="testQRCodeAccessibility"/>
+                    <include name="testManualCodeEntry"/>
+                    <include name="testBackButtonFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test Group 4: Skip and Alternative Options -->
+    <test name="2FA Setup Alternatives">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testSkip2FASetup"/>
+                    <include name="testUniversalSecondFactorSetup"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

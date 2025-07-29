@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoginTestSuite">
+    <test name="Login Functionality Tests">
+        <classes>
+            <class name="com.browserstack.LoginTest">
+                <methods>
+                    <include name="testValidEmailLogin"/>
+                    <include name="testGoogleLogin"/>
+                    <include name="testInvalidEmailLogin"/>
+                    <include name="testInvalidPasswordLogin"/>
+                    <include name="testEmptyFieldsLogin"/>
+                    <include name="testInvalidEmailFormatLogin"/>
+                    <include name="testLoginPageElements"/>
+                    <include name="testForgotPasswordFlow"/>
+                    <include name="testLoginLogout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Google Login Specific Tests">
+        <classes>
+            <class name="com.browserstack.GoogleLoginTest">
+                <methods>
+                    <include name="testGoogleLoginAuthentication"/>
+                    <include name="testGoogleLoginButtonPresence"/>
+                    <include name="testGoogleLoginFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
