@@ -9,6 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Store;
 
 public class SignupTest extends LocalBrowserTest {
 
@@ -123,7 +131,7 @@ public class SignupTest extends LocalBrowserTest {
                 By.xpath("//input[@type='email']")
             ));
             emailInput.clear(); // Clear any existing text
-            emailInput.sendKeys("nhnbaohan@gmail.com");
+            emailInput.sendKeys("hainam38493@gmail.com");
             System.out.println("Successfully entered email");
             
             // Click Continue button
@@ -160,7 +168,7 @@ public class SignupTest extends LocalBrowserTest {
             WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[@name=\"password\"]")  // First password field is always the new password
             ));
-            String password = "Test@123456"; // Meets all requirements: length 8+, symbol, number, upper/lowercase
+            String password = "Hainam12@"; // Meets all requirements: length 8+, symbol, number, upper/lowercase
             passwordInput.sendKeys(password);
             System.out.println("Entered password");
 
@@ -178,19 +186,158 @@ public class SignupTest extends LocalBrowserTest {
             passwordContinueButton.click();
             System.out.println("Clicked continue after setting password");
 
-            // Wait for verification code field and verify it's present
+            // Wait for verification code field to appear first
             WebElement verificationCodeInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//div[contains(@class, 'verification-code') or contains(@class, 'otp-input')]")
+                By.xpath("//input[@name='code'] | //div[contains(@class, 'verification-code')] | //div[contains(@class, 'otp-input')]")
             ));
             assertTrue(verificationCodeInput.isDisplayed(), "Verification code input should be displayed");
             System.out.println("Successfully reached verification code step");
 
+            // Step 2: Fetch OTP from Gmail
+            String otp = fetchOtpFromGmail();
+            System.out.println("OTP received: " + otp);
+
+            // Step 3: Enter OTP and verify
+            WebElement codeInput = driver.findElement(By.xpath("//input[@name='code']"));
+            codeInput.clear();
+            codeInput.sendKeys(otp);
+            System.out.println("Entered OTP code: " + otp);
+            
+            // Click Continue to submit OTP
+            WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Continue' or text()='Submit' or text()='Verify']")
+            ));
+            submitButton.click();
+            System.out.println("Clicked continue/submit button after entering OTP");
+            
+            // Wait a moment for verification to process
+            Thread.sleep(3000);
+            System.out.println("Email signup with OTP verification completed successfully");
+
         } catch (Exception e) {
             System.out.println("Error during email signup process: " + e.getMessage());
             e.printStackTrace();
-            throw e; // Re-throw to fail the test
+            throw new RuntimeException(e); // Wrap checked exception in unchecked to avoid compile error
         }
     }
+
+    public static String fetchOtpFromGmail() throws Exception {
+        Properties props = new Properties();
+        props.put("mail.store.protocol", "imaps");
+        props.put("mail.imaps.ssl.enable", "true");
+        props.put("mail.imaps.port", "993");
+
+        Session session = Session.getInstance(props);
+        Store store = session.getStore("imaps");
+        
+        // Note: For Gmail, you need to use App Password instead of regular password
+        // Go to Google Account settings > Security > 2-Step Verification > App passwords
+        store.connect("imap.gmail.com", "hainam38493@gmail.com", "whbb iayp jikh ldvq\r\n" + //
+                        "");
+
+        Folder inbox = store.getFolder("INBOX");
+        inbox.open(Folder.READ_ONLY);
+
+        // Retry mechanism for fetching OTP email
+        int maxRetries = 5;
+        int retryDelay = 10000; // 10 seconds
+        
+        for (int retry = 0; retry < maxRetries; retry++) {
+            System.out.println("Attempt " + (retry + 1) + " to fetch OTP from Gmail...");
+            
+            // Get recent messages (last 10) to avoid processing too many emails
+            Message[] messages = inbox.getMessages();
+            int start = Math.max(1, messages.length - 10);
+            Message[] recentMessages = inbox.getMessages(start, messages.length);
+
+            for (int i = recentMessages.length - 1; i >= 0; i--) {
+                Message message = recentMessages[i];
+                String subject = message.getSubject();
+                
+                // Check if email is recent (within last 5 minutes)
+                long emailTime = message.getReceivedDate().getTime();
+                long currentTime = System.currentTimeMillis();
+                long timeDiff = currentTime - emailTime;
+                
+                if (timeDiff > 5 * 60 * 1000) { // Skip emails older than 5 minutes
+                    continue;
+                }
+                
+                // Check for email verification subject
+                if (subject != null && (subject.toLowerCase().contains("verify") || 
+                                       subject.toLowerCase().contains("verification") ||
+                                       subject.toLowerCase().contains("code"))) {
+                    
+                    String content = "";
+                    try {
+                        // Handle different content types
+                        if (message.isMimeType("text/plain")) {
+                            content = (String) message.getContent();
+                        } else if (message.isMimeType("text/html")) {
+                            content = (String) message.getContent();
+                        } else if (message.isMimeType("multipart/*")) {
+                            content = getTextFromMessage(message);
+                        }
+                        
+                        System.out.println("Email subject: " + subject);
+                        System.out.println("Email content preview: " + content.substring(0, Math.min(200, content.length())));
+                        
+                        // Pattern to match: "Code Y4E6KC" or "(Code Y4E6KC)" or "Code: Y4E6KC"
+                        Pattern[] patterns = {
+                            Pattern.compile("Code[:\\s]*([A-Z0-9]{6})", Pattern.CASE_INSENSITIVE),
+                            Pattern.compile("\\(Code[:\\s]*([A-Z0-9]{6})\\)", Pattern.CASE_INSENSITIVE),
+                            Pattern.compile("verification code[:\\s]*([A-Z0-9]{6})", Pattern.CASE_INSENSITIVE),
+                            Pattern.compile("\\b([A-Z0-9]{6})\\b") // Fallback: any 6-character alphanumeric code
+                        };
+                        
+                        for (Pattern pattern : patterns) {
+                            Matcher matcher = pattern.matcher(content);
+                            if (matcher.find()) {
+                                String otp = matcher.group(1);
+                                if (otp != null && otp.length() == 6) {
+                                    inbox.close(false);
+                                    store.close();
+                                    System.out.println("Found OTP: " + otp);
+                                    return otp;
+                                }
+                            }
+                        }
+                        
+                    } catch (Exception e) {
+                        System.out.println("Error reading message content: " + e.getMessage());
+                    }
+                }
+            }
+            
+            // If OTP not found and not the last retry, wait before trying again
+            if (retry < maxRetries - 1) {
+                System.out.println("OTP not found, waiting " + (retryDelay/1000) + " seconds before retry...");
+                Thread.sleep(retryDelay);
+                // Refresh folder to get new messages
+                inbox.close(false);
+                inbox.open(Folder.READ_ONLY);
+            }
+        }
+
+        inbox.close(false);
+        store.close();
+        throw new Exception("OTP not found in recent emails after " + maxRetries + " attempts. Please check the email subject and content format.");
+    }
+    
+    private static String getTextFromMessage(Message message) throws Exception {
+        StringBuilder result = new StringBuilder();
+        if (message.isMimeType("multipart/*")) {
+            javax.mail.Multipart multipart = (javax.mail.Multipart) message.getContent();
+            for (int i = 0; i < multipart.getCount(); i++) {
+                javax.mail.BodyPart bodyPart = multipart.getBodyPart(i);
+                if (bodyPart.isMimeType("text/plain") || bodyPart.isMimeType("text/html")) {
+                    result.append(bodyPart.getContent().toString());
+                }
+            }
+        }
+        return result.toString();
+    }
+
 
     @Test
     public void testInvalidEmail() throws InterruptedException {

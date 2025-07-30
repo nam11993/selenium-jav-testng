@@ -37,6 +37,13 @@
             <version>${selenium.version}</version>
         </dependency>
 
+        <!-- JavaMail API -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
         <!-- WebDriverManager for automatic driver management -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>

@@ -81,7 +81,7 @@ public class SignupTest extends BrowserStackTest {
                 By.xpath("//button[contains(text(), 'Login') or contains(text(), 'LOG IN') or contains(text(), 'Sign in')]")
             );
             System.out.println("Found login button with text: " + loginButton.getText());
-            loginButton.click();r
+            loginButton.click();
             
             // Click Register account link
             WebElement registerButton = wait.until(ExpectedConditions.elementToBeClickable(
@@ -95,7 +95,7 @@ public class SignupTest extends BrowserStackTest {
                 By.xpath("//input[@type='email']")
             ));
             emailInput.clear(); // Clear any existing text
-            emailInput.sendKeys("nhnbaohan@gmail.com");
+            emailInput.sendKeys("hainam38493@gmail.com");
             System.out.println("Successfully entered email");
             
             // Click Continue button
@@ -132,7 +132,7 @@ public class SignupTest extends BrowserStackTest {
             WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[@name=\"password\"]")  // First password field is always the new password
             ));
-            String password = "Test@123456"; // Meets all requirements: length 8+, symbol, number, upper/lowercase
+            String password = "Hainam12@"; // Meets all requirements: length 8+, symbol, number, upper/lowercase
             passwordInput.sendKeys(password);
             System.out.println("Entered password");
 

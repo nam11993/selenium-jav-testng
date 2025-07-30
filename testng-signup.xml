@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SignupTestSuite">
+    <test name="EmailSignupTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.browserstack.SignupTest">
+                <methods>
+                    <include name="testValidEmailSignup"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -34,23 +34,37 @@ public class LocalBrowserTest {
     private WebDriver createDriver(String browserName) {
         switch (browserName.toLowerCase()) {
             case "chrome":
-                WebDriverManager.chromedriver().clearDriverCache().setup();
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-                chromeOptions.addArguments("--disable-extensions");
-                chromeOptions.addArguments("--no-sandbox");
-                chromeOptions.addArguments("--disable-dev-shm-usage");
-                chromeOptions.addArguments("--remote-allow-origins=*");
-                chromeOptions.addArguments("--disable-web-security");
-                chromeOptions.addArguments("--disable-features=VizDisplayCompositor");
-                // chromeOptions.addArguments("--headless"); // Uncomment for headless mode
-                return new ChromeDriver(chromeOptions);
+                try {
+                    WebDriverManager.chromedriver().clearDriverCache().setup();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+                    chromeOptions.addArguments("--disable-extensions");
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--remote-allow-origins=*");
+                    chromeOptions.addArguments("--disable-web-security");
+                    chromeOptions.addArguments("--disable-features=VizDisplayCompositor");
+                    chromeOptions.addArguments("--disable-gpu");
+                    chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+                    // chromeOptions.addArguments("--headless"); // Uncomment for headless mode
+                    System.out.println("Creating Chrome driver...");
+                    return new ChromeDriver(chromeOptions);
+                } catch (Exception e) {
+                    System.err.println("Error creating Chrome driver: " + e.getMessage());
+                    throw e;
+                }
                 
             case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                // firefoxOptions.addArguments("--headless"); // Uncomment for headless mode
-                return new FirefoxDriver(firefoxOptions);
+                try {
+                    WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    // firefoxOptions.addArguments("--headless"); // Uncomment for headless mode
+                    System.out.println("Creating Firefox driver...");
+                    return new FirefoxDriver(firefoxOptions);
+                } catch (Exception e) {
+                    System.err.println("Error creating Firefox driver: " + e.getMessage());
+                    throw e;
+                }
                 
             default:
                 throw new IllegalArgumentException("Browser not supported: " + browserName);
