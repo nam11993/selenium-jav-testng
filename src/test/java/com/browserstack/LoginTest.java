@@ -14,7 +14,6 @@ import java.time.Duration;
 import java.util.List;
 
 import com.warrenstrange.googleauth.GoogleAuthenticator;
-import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
 
 public class LoginTest extends LocalBrowserTest {
 
@@ -61,7 +60,7 @@ public class LoginTest extends LocalBrowserTest {
                 By.xpath("//input[@type='password' or contains(@placeholder, 'password') or contains(@name, 'password')]")
             ));
             passwordInput.clear();
-            passwordInput.sendKeys("Test@123456");
+            passwordInput.sendKeys("Hainam12@");
             System.out.println("✅ Entered password");
             
             // Step 4: Click login/sign in button
@@ -71,7 +70,14 @@ public class LoginTest extends LocalBrowserTest {
             signInButton.click();
             System.out.println("✅ Clicked sign in button");
             Thread.sleep(5000);
-            
+
+            // Step 5: Click button authen
+            WebElement authButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@class=\"grid grid-cols-1 gap-5 w-full pt-4\"]/a[1]")
+            ));
+            authButton.click();
+            System.out.println("✅ Clicked authenticate button");
+
             // Step 6: Handle 2FA Setup after successful login
             WebElement otpUriElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//a[@class=\"flex-1 overflow-x-auto\"]")
