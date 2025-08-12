@@ -27,3 +27,15 @@ Thumbs.db
 # Test results
 *.log
 test-output/
+
+# Exclude Python project directory (outside this repo)
+../pythonProject/
+
+# Additional exclusions
+*.class
+*.jar
+*.war
+*.ear
+logs/
+surefire-reports/
+allure-results/
