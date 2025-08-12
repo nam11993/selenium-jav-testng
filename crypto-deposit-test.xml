@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CryptoDepositTestSuite">
+    <test name="Crypto Deposit Functionality Tests">
+        <classes>
+            <class name="com.browserstack.CryptoDepositTest">
+                <methods>
+                    <include name="testAccessDepositCryptoPage"/>
+                    <include name="testSelectCryptocurrency"/>
+                    <include name="testSelectNetwork"/>
+                    <include name="testGenerateDepositAddress"/>
+                    <include name="testCopyDepositAddress"/>
+                    <include name="testDepositAddressValidation"/>
+                    <include name="testDepositAddressErrorHandling"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
