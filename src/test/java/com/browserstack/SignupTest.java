@@ -393,7 +393,7 @@ public class SignupTest extends LocalBrowserTest {
         Thread.sleep(1000);
 
         // Enter existing email
-        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("namnh@gmail.com");
+        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("hainam38493@gmail.com");
         Thread.sleep(1000);
         
         // Click Sign up

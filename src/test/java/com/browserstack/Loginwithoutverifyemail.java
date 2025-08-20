@@ -41,7 +41,7 @@ public class Loginwithoutverifyemail extends LocalBrowserTest {
                 By.xpath("//input[@type='email']")
             ));
             emailInput.clear(); // Clear any existing text
-            emailInput.sendKeys("hainam38493@gmail.com");
+            emailInput.sendKeys("tuanna15091999@gmail.com");
             System.out.println("Successfully entered email");
             
             // Click Continue button
@@ -123,9 +123,9 @@ public class Loginwithoutverifyemail extends LocalBrowserTest {
             // Step 2: Enter valid email
             WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[@type='email' or contains(@placeholder, 'email') or contains(@name, 'email')]")
-            ));
+            )); 
             emailInput.clear();
-            emailInput.sendKeys("hainam38493@gmail.com");
+            emailInput.sendKeys("tuanna15091999@gmail.com");
             System.out.println("✅ Entered email");
             
             // Check if this is ZITADEL multi-step login (look for Next/Continue button)

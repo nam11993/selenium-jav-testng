@@ -10,6 +10,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.Configuration;
 
 import java.time.Duration;
 
@@ -22,6 +24,10 @@ public class LocalBrowserTest {
         driver = createDriver(browser != null ? browser : "chrome");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
+        
+        // Configure Selenide to use our WebDriver instance
+        WebDriverRunner.setWebDriver(driver);
+        Configuration.timeout = 4000; // 4 seconds timeout
     }
 
     @AfterMethod(alwaysRun = true)
@@ -29,6 +35,8 @@ public class LocalBrowserTest {
         if (driver != null) {
             driver.quit();
         }
+        // Clear Selenide WebDriver reference
+        WebDriverRunner.closeWebDriver();
     }
 
     private WebDriver createDriver(String browserName) {

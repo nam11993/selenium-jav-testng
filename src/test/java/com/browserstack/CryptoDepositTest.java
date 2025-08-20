@@ -26,7 +26,7 @@ public class CryptoDepositTest extends LocalBrowserTest {
         // Navigate to Deposit Crypto page
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         WebElement depositButton = wait.until(ExpectedConditions.elementToBeClickable(
-            By.xpath("//button[contains(text(), 'Deposit crypto') or contains(@class, 'deposit')]")
+            By.xpath("//a[text()='Deposit crypto']")
         ));
         depositButton.click();
         

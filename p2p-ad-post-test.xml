@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="P2P Ad Post Test Suite" thread-count="1" parallel="false" preserve-order="true">
+    <test name="P2P Advertisement Posting Tests" preserve-order="true">
+        <classes>
+            <class name="com.browserstack.P2PAdPostTest">
+                <methods>
+                    <include name="testP2PAdPostPageElementsVisibility"/>
+                    <include name="testCreateBuyUSDTAdvertisement"/>
+                    <include name="testCreateSellUSDTAdvertisement"/>
+                    <include name="testFormValidationWithInvalidInputs"/>
+                    <include name="testPaymentMethodSelection"/>
+                    <include name="testNavigationAndStepProgression"/>
+                    <include name="testResponsiveDesignMobileCompatibility"/>
+                    <include name="testAccessibilityFeatures"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
