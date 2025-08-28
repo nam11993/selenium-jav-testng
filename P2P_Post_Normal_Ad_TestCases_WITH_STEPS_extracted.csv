@@ -1,0 +1,531 @@
+ID,Category,Sub-Feature,Title,Preconditions,Steps,Test Data,Expected Result,Priority,Notes,Step chi tiết
+GEN-01,General,Navigation,Open Post Normal Ad page,User is logged in; KYC completed; P2P enabled,Go to P2P Trading → Post advertisement → Post Normal Ad,,Page loads with Step 1 highlighted; default 'I want to Buy' selected; all fields visible and enabled as per defaults.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Giữ chế độ **I want to Buy**.
+5. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+GEN-02,General,Navigation,Back to Ads list works,On Step 1,Click 'Back to Ads list',,User navigates to 'My ads' or ads list without errors.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Sau khi đăng, mở **My ads** và **Marketplace** để xác minh quảng cáo xuất hiện đúng và thông tin khớp.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+GEN-03,General,Progression,Next Step disabled until valid,On Step 1,Observe 'Next Step' before filling any field,,'Next Step' is disabled and shows tooltip/list of missing fields.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Kiểm tra điều hướng bàn phím (Tab/Shift+Tab), tooltip lỗi khi nút **Next** bị disabled và đọc bằng screen reader.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+GEN-04,General,Progression,Next Step enabled when all required valid,On Step 1 with valid inputs,Fill all required fields validly → Click 'Next Step',,Navigates to Step 2. No client-side console errors.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Để trống trường liên quan và nhấn **Next/Submit** để quan sát thông báo lỗi.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+GEN-05,General,Draft/Autosave,Form draft persists on reload,On Step 1 with some fields filled,Refresh page,,Values persist via local storage/draft API.,Medium,"If not supported, requirement should be clarified.","1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+5. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ."
+TOG-01,Functional,Buy/Sell Toggle,Switch to Sell updates labels and validations,Open Step 1,Click 'I want to Sell',,Fiat payment methods still required; Balance check appears for asset; Derived labels update (you sell DOGE for EUR).,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chuyển công tắc chế độ sang **I want to Sell**.
+5. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+6. Chọn **With Fiat** (VD: VND/USD/EUR).
+7. Nếu ở chế độ **Sell**, thử nhập số lượng vượt **số dư khả dụng** để kiểm tra cảnh báo.
+8. Chọn **Payment method** (ít nhất 1, tối đa 5) từ danh sách đã cấu hình.
+9. Xác minh không chọn trùng, không chọn phương thức **chưa xác minh** (nếu áp dụng).
+10. Để trống trường liên quan và nhấn **Next/Submit** để quan sát thông báo lỗi."
+TOG-02,Functional,Buy/Sell Toggle,Toggle retains entered values per mode,Enter values on Buy,Switch to Sell → Switch back to Buy,,Values entered for each mode are retained independently.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+TOG-03,Functional,Buy/Sell Toggle,Prevent switch when unsaved invalid data?,Enter invalid data on Buy,Switch to Sell,,"Either switch allowed but invalid state is reset, or confirmation prompt appears; no crash.",Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+CUR-01,Functional,Asset,Default asset is DOGE,Open page,Observe Asset field,,DOGE pre-selected; dropdown works.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+CUR-02,Functional,Asset,Change asset updates market data box,Open page,Change asset to BTC/USDT/etc.,BTC,Market Price/Highest order refresh correctly; validation ranges recalc.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Ghi nhận **Market Price (M)** hiển thị trên form."
+CUR-03,Functional,Fiat,Change fiat currency,Open page,Change EUR to USD/BRL/VND (if supported),,"Currency symbol, order-limit currency, and derived amounts update. Locale formatting respected.",High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **With Fiat** (VD: VND/USD/EUR).
+5. Nhập ký tự/định dạng không hợp lệ để xác minh thông báo lỗi và chặn submit.
+6. Đổi ngôn ngữ/locale và kiểm tra định dạng số (dấu phẩy/dấu chấm) cùng bản dịch nhãn/lỗi."
+CUR-04,Negative,Fiat/Asset,Unsupported pair blocked,Platform configured to disallow certain pairs,Select an unavailable combination,,Dropdown prevents selection or shows clear error.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+MRK-01,Functional,Market Data,Market price shown with timestamp/auto-refresh,Open page,Observe market box for 60s,,Price updates at configured interval; timestamp or 'just now' indicator optional.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Ghi nhận **Market Price (M)** hiển thị trên form.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+MRK-02,Functional,Market Data,Highest order price reflects live orderbook,Open page,Compare with top P2P order list,,Values match within expected latency.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+PRC-01,Positive,Fixed Price,Enter price at exact lower bound (0.90x market),Market price M available,Enter Fixed price = 0.90*M,M=0.183828 ⇒ 0.1654452,Field accepts; no error; can proceed.,High,"Rounding rules applied (e.g., 2–6 decimals).","1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Ghi nhận **Market Price (M)** hiển thị trên form.
+5. Nhập **Fixed price** = 0.90 × M và kiểm tra được chấp nhận."
+PRC-02,Positive,Fixed Price,Enter price at exact upper bound (1.10x market),Market price M available,Enter Fixed price = 1.10*M,M=0.183828 ⇒ 0.2022108,Accepted; can proceed.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Ghi nhận **Market Price (M)** hiển thị trên form.
+5. Nhập **Fixed price** = 1.10 × M và kiểm tra được chấp nhận."
+PRC-03,Negative,Fixed Price,Below lower bound rejected,M known,Enter price = 0.8999*M,,Inline error 'price must be between 0.90–1.10 of market'; Next Step disabled.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Ghi nhận **Market Price (M)** hiển thị trên form.
+5. Nhập **Fixed price** = 0.90 × M và kiểm tra được chấp nhận.
+6. Nhập **Fixed price** = 1.10 × M và kiểm tra được chấp nhận."
+PRC-04,Negative,Fixed Price,Above upper bound rejected,M known,Enter price = 1.1001*M,,Inline error; button disabled.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+PRC-05,Boundary,Fixed Price,Max decimal places,—,"Enter price with > allowed decimals (e.g., 10 dp)",0.1838280001,Value auto-rounded or error shown per spec.,Medium,Document allowed precision per fiat.,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+5. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**.
+6. Nhập giá trị vượt số chữ số thập phân cho phép để kiểm tra cơ chế làm tròn/chặn."
+PRC-06,Negative,Fixed Price,Non-numeric input,—,Enter letters/symbols,"abc, €, ,",Validation error; field restores previous valid value.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+PRC-07,Negative,Fixed Price,Empty value,—,Clear the field,,Required error; cannot proceed.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Để trống trường liên quan và nhấn **Next/Submit** để quan sát thông báo lỗi.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PRC-08,Security,Fixed Price,Bypass client validation via DevTools,Intercept request,Set price outside server bounds in payload,price=2x market,Server rejects with 400 + clear message; no ad created.,Critical,API test.,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+5. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ.
+6. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+QTY-01,Positive,Target Quantity,Minimum positive quantity accepted,Asset has min trade amount A_min,Enter quantity = A_min,,Accepted; derived fiat shows correctly.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **With Fiat** (VD: VND/USD/EUR).
+5. Nhập **Target quantity** > 0 đúng **precision** của asset.
+6. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+7. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**."
+QTY-02,Boundary,Target Quantity,Quantity with max decimal places,Asset precision P,Enter decimals = P,,Accepted,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập **Target quantity** > 0 đúng **precision** của asset.
+5. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+6. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**.
+7. Nhập giá trị vượt số chữ số thập phân cho phép để kiểm tra cơ chế làm tròn/chặn."
+QTY-03,Negative,Target Quantity,Exceeds allowed precision,Asset precision P,Enter decimals = P+1,,Inline error,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập giá trị vượt số chữ số thập phân cho phép để kiểm tra cơ chế làm tròn/chặn.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+QTY-04,Negative,Target Quantity,Zero quantity,—,Enter 0,,Error: must be > 0,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập **Target quantity** > 0 đúng **precision** của asset.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+QTY-05,Negative,Target Quantity,Extremely large quantity,—,Enter > platform max,,Error or cap; prevent overflow.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập **Target quantity** > 0 đúng **precision** của asset.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+QTY-06,Functional,Target Quantity,Auto-calculated fiat value updates when price changes,Set quantity and price,Change fixed price,,Fiat estimation recalculates.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **With Fiat** (VD: VND/USD/EUR).
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+LIM-01,Positive,Order Limit,"Set min=platform min, max=<= total fiat value",Have quantity Q and price P,Set min=Min_fiat; max=Q*P,,Accepted; derived DOGE underfields update.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **With Fiat** (VD: VND/USD/EUR).
+6. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+7. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**."
+LIM-02,Negative,Order Limit,Min > Max rejected,—,"Set min=200, max=100",,"Inline error, cannot proceed.",High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+5. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**."
+LIM-03,Negative,Order Limit,Min below platform minimum,Platform min exists,Set min lower than allowed,,Error displayed.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+5. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**."
+LIM-04,Negative,Order Limit,Max above total fiat value (Q*P),—,Set max > Q*P,,Error or auto-adjust suggestion.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **With Fiat** (VD: VND/USD/EUR).
+5. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+6. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**."
+LIM-05,Boundary,Order Limit,Exact equal to total fiat value,—,Set max = Q*P,,Accepted.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **With Fiat** (VD: VND/USD/EUR).
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+LIM-06,Boundary,Order Limit,Decimals precision per fiat,—,Enter many decimals,,Rounded or blocked per currency rules.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **With Fiat** (VD: VND/USD/EUR).
+5. Nhập giá trị vượt số chữ số thập phân cho phép để kiểm tra cơ chế làm tròn/chặn."
+PAY-01,Functional,Payment Methods,Select one payment method,At least one method configured,Choose bank transfer,,Method chip appears; field valid.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **Payment method** (ít nhất 1, tối đa 5) từ danh sách đã cấu hình.
+6. Xác minh không chọn trùng, không chọn phương thức **chưa xác minh** (nếu áp dụng)."
+PAY-02,Functional,Payment Methods,Select up to 5 methods,Have ≥5 methods configured,Add 5 distinct methods,,Accepted; sixth selection disabled with notice.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PAY-03,Negative,Payment Methods,No payment method selected,—,Leave empty,,Error 'Select at least one method' on submit.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **Payment method** (ít nhất 1, tối đa 5) từ danh sách đã cấu hình.
+6. Xác minh không chọn trùng, không chọn phương thức **chưa xác minh** (nếu áp dụng).
+7. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+PAY-04,Negative,Payment Methods,Duplicate method prevented,—,Attempt to add same method twice,,UI prevents duplicate; clear message.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PAY-05,Security,Payment Methods,Unverified method cannot be used,Have an unverified payment method,Select unverified,,Blocked with explanation or prompts verification.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+TTL-01,Functional,Time Limit,Default time limit populated,Open page,Observe dropdown,,"Has sensible default (e.g., 15–30 min).",Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+5. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**.
+6. Chọn **Payment time limit** (VD: 15/30/45/60 phút)."
+TTL-02,Functional,Time Limit,Change to another option,—,Select 45/60 min,,Value stored; reflected in payload.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+5. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ."
+TTL-03,Negative,Time Limit,Invalid custom value blocked (if free input),If custom input supported,Enter 0 or 1000,,Error displayed.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+STP2-01,Functional,Remarks,Enter plain-text remarks within limit,On Step 2,"Type remarks <= limit (e.g., 500 chars)",,Accepted; counter updates.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập **Remarks** trong giới hạn ký tự (ví dụ ≤ 500).
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+STP2-02,Negative,Remarks,Exceed remark length limit,—,Paste text > limit,,Error and remaining/over counter.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+STP2-03,Security,Remarks,Prevent XSS in remarks,—,Enter <script>alert(1)</script>,,Escaped on preview/listing; stored safely.,Critical,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập **Remarks** trong giới hạn ký tự (ví dụ ≤ 500).
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+STP2-04,Functional,Auto Reply,Enable automatic response template,—,Toggle 'Auto response' and enter message,,Saves with ad and triggers on first chat.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Bật **Auto response** và nhập nội dung phản hồi tự động.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+ACC-01,Business,Balance,Sell ad requires sufficient asset balance/hold,Mode=Sell; wallet has Q,Set target quantity > available,,Server blocks with 'insufficient balance' prior to publish.,Critical,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chuyển công tắc chế độ sang **I want to Sell**.
+5. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+6. Nếu ở chế độ **Sell**, thử nhập số lượng vượt **số dư khả dụng** để kiểm tra cảnh báo.
+7. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+8. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ.
+9. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+ACC-02,Business,KYC,User without required KYC cannot post,KYC < required,Try to go Next,,Redirect to KYC or error modal.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Để trống trường liên quan và nhấn **Next/Submit** để quan sát thông báo lỗi.
+5. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+ACC-03,Business,Ban/Region,Restricted region cannot post,Account in restricted region,Open page,,Feature disabled or notice shown.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+API-01,API,Payload,POST /p2p/ads contains correct fields,Use network inspector,Submit valid ad,,"Payload includes side, asset, fiat, price, quantity, min/max, methods[], time_limit, remarks, auto_reply.",High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Chọn **With Fiat** (VD: VND/USD/EUR).
+6. Nhập **Target quantity** > 0 đúng **precision** của asset.
+7. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+8. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**.
+9. Nhập **Remarks** trong giới hạn ký tự (ví dụ ≤ 500).
+10. Bật **Auto response** và nhập nội dung phản hồi tự động.
+11. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+12. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ.
+13. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+API-02,API,Server Validation,Server validates bounds even if client disabled,Tamper payload,Send price outside bounds,,HTTP 4xx with specific error codes/messages.,Critical,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+5. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ."
+API-03,API,Idempotency,Duplicate submission prevented,Double-click Next or retry on slow network,,Single ad created; others rejected via idempotency key.,High,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhấn **Submit** liên tiếp/nhấp đôi và xác minh chỉ 1 quảng cáo được tạo.
+5. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công."
+API-04,API,Rate Limit,Protect endpoint from spam,Rapidly submit many times,,429 after threshold; user-friendly error.,Medium,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhấn **Submit** liên tiếp/nhấp đôi và xác minh chỉ 1 quảng cáo được tạo.
+5. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+6. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ."
+API-05,API,Rounding,Server rounds numbers consistently,Submit values with many decimals,,Stored values follow documented precision.,Medium,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập giá trị vượt số chữ số thập phân cho phép để kiểm tra cơ chế làm tròn/chặn.
+5. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+6. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ."
+SEC-01,Security,AuthZ,Only owner can create ads,Unauthenticated user,Open create URL directly,,Redirect to login.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhấn **Next** tới Step 2 (nếu có), sau đó **Submit** để tạo quảng cáo và kiểm tra thông báo thành công.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+SEC-02,Security,CSRF,CSRF tokens validated,Have another origin,Attempt CSRF post,,Request blocked; token required.,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Để trống trường liên quan và nhấn **Next/Submit** để quan sát thông báo lỗi.
+5. Thử gửi request tạo quảng cáo từ domain khác (thiếu CSRF) và xác minh bị chặn."
+SEC-03,Security,Input Injection,Reject SQL/HTML/JS in all fields,—,Enter malicious strings,,Safely handled; encoded or rejected.,Critical,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+SEC-04,Security,Mass Assignment,Extra unexpected fields ignored,Tamper payload,Add admin=true,,Ignored; no privilege escalation.,Critical,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+PERF-01,Performance,Load,Page loads under target SLA,—,Measure first contentful paint,,"Meets SLA (e.g., <2s).",Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Đo thời gian phản hồi khi **Submit** và so với SLA; bật Offline để kiểm tra thông báo lỗi và nút **Retry**.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PERF-02,Performance,Submit latency,Ad creation within SLA,—,Measure from submit to success,,"Meets SLA (e.g., <1s P95).",Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Đo thời gian phản hồi khi **Submit** và so với SLA; bật Offline để kiểm tra thông báo lỗi và nút **Retry**.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PERF-03,Resilience,Network loss during submit,—,Turn off network at submit,,Shows retry & no duplicate ads.,High,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Đo thời gian phản hồi khi **Submit** và so với SLA; bật Offline để kiểm tra thông báo lỗi và nút **Retry**.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PERF-04,Resilience,Market price changes mid-submit,—,Change price server-side between Step1 and submit,,Server revalidates; shows clear message to adjust if out-of-range.,High,High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Mở **DevTools → Network** để quan sát **POST /p2p/ads**.
+5. Thử sửa payload (giá ngoài biên/trường thừa) và xác minh server trả lỗi/phớt lờ trường không hợp lệ."
+UX-01,UX,Affordance,Disabled state/tooltip for 'Next Step' lists missing fields,—,Hover button,,Helpful tooltip appears.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Kiểm tra điều hướng bàn phím (Tab/Shift+Tab), tooltip lỗi khi nút **Next** bị disabled và đọc bằng screen reader.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+UX-02,A11y,Keyboard,All fields reachable by Tab; visible focus,—,Navigate with keyboard only,,No traps; ARIA labels present.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Kiểm tra điều hướng bàn phím (Tab/Shift+Tab), tooltip lỗi khi nút **Next** bị disabled và đọc bằng screen reader.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+UX-03,A11y,Screen Reader,"Labels, helper texts, and errors announced",—,Use screen reader,,Reads field names and errors.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."
+I18N-01,Localization,Language,Vietnamese/English strings correct,Locale=vi/en,Switch language,,All labels & currency formats localized.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Nhập ký tự/định dạng không hợp lệ để xác minh thông báo lỗi và chặn submit.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+I18N-02,Localization,Number Format,Comma/period handling,Locale=de/vi,"Enter 0,18 vs 0.18",,Parser handles locale or blocks with clear hint.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Đổi ngôn ngữ/locale và kiểm tra định dạng số (dấu phẩy/dấu chấm) cùng bản dịch nhãn/lỗi.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PUB-01,Functional,Publish,Ad appears in 'My ads' with correct values,Submit valid ad,Open My ads,,"All values (price, qty, min/max, methods, TTL) match.",High,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** (VD: USDT/BTC) từ danh sách.
+5. Tại **Order limit**, nhập **Min** và **Max** (đơn vị fiat).
+6. Đảm bảo **Min ≤ Max** và **Max ≤ (Target quantity × Fixed price)**.
+7. Sau khi đăng, mở **My ads** và **Marketplace** để xác minh quảng cáo xuất hiện đúng và thông tin khớp."
+PUB-02,Functional,Public listing,Ad visible in marketplace with ranking rules,—,Search for the pair,,Ad listed according to rules; price computed correctly.,Medium,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Sau khi đăng, mở **My ads** và **Marketplace** để xác minh quảng cáo xuất hiện đúng và thông tin khớp.
+5. Chọn **Asset** và **With Fiat**.
+6. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+7. Chọn **Payment method** và **Payment time limit**.
+8. Nhập **Remarks** (tuỳ chọn).
+9. Nhấn **Submit** và xác minh kết quả mong đợi."
+PUB-03,Functional,Cancel Draft,Cancel from Step 1 shows confirm,—,Click Cancel/Back,,Confirm dialog prevents accidental loss.,Low,,"1. Đăng nhập tài khoản hợp lệ (đã KYC nếu cần).
+2. Vào **P2P Trading** trên thanh điều hướng.
+3. Nhấn **Post advertisement** và chọn **Post Normal Ad** (tạo quảng cáo thường).
+4. Chọn **Asset** và **With Fiat**.
+5. Nhập **Fixed price**, **Target quantity**, **Order limit (Min/Max)**.
+6. Chọn **Payment method** và **Payment time limit**.
+7. Nhập **Remarks** (tuỳ chọn).
+8. Nhấn **Submit** và xác minh kết quả mong đợi."

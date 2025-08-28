@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="P2P Post Advertisement Test Suite" verbose="1">
+    <test name="P2P Post Ad Test Cases" preserve-order="true">
+        <classes>
+            <class name="com.browserstack.P2PPostAdTestCases">
+                <methods>
+                    <include name="testPostNormalBuyUSDTAd"/>
+                    <include name="testPostNormalSellUSDTAd"/>
+                    <include name="testAdvertisementFormValidation"/>
+                    <include name="testPaymentMethodsSelection"/>
+                    <include name="testAdvertisementPreview"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

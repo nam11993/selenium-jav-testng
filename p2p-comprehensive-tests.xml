@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="P2P Comprehensive Test Suite - 70 Test Cases" verbose="1" parallel="false">
+    <parameter name="browser" value="chrome"/>
+    
+    <test name="P2P Post Advertisement - All 70 Test Cases" preserve-order="true">
+        <classes>
+            <class name="com.browserstack.P2PComprehensiveTestCases">
+                <!-- All 70 test cases will be executed in priority order -->
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Optional: Run specific categories -->
+    <test name="General Navigation Tests" enabled="false" preserve-order="true">
+        <classes>
+            <class name="com.browserstack.P2PComprehensiveTestCases">
+                <methods>
+                    <include name="testGEN01"/>
+                    <include name="testGEN02"/>
+                    <include name="testGEN03"/>
+                    <include name="testGEN04"/>
+                    <include name="testGEN05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Functional Toggle Tests" enabled="false" preserve-order="true">
+        <classes>
+            <class name="com.browserstack.P2PComprehensiveTestCases">
+                <methods>
+                    <include name="testTOG01"/>
+                    <include name="testTOG02"/>
+                    <include name="testTOG03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Currency Asset Tests" enabled="false" preserve-order="true">
+        <classes>
+            <class name="com.browserstack.P2PComprehensiveTestCases">
+                <methods>
+                    <include name="testCUR01"/>
+                    <include name="testCUR02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>
